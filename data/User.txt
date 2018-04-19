@@ -1,0 +1,12 @@
+[
+  {
+    "password": "6c56f33c347ab0e4a00c62b5786a9f48c97c48c14f7adcbf2efd172dc315d012",
+    "id": 1,
+    "username": "min"
+  },
+  {
+    "password": "6c56f33c347ab0e4a00c62b5786a9f48c97c48c14f7adcbf2efd172dc315d012",
+    "id": 2,
+    "username": "tata"
+  }
+]

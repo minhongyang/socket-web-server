@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Home</title>
+</head>
+<body>
+    <h1>Hello {{user}}</h1>
+    <p>A foreign language is a weapon in the struggle of life</p>
+    <img src="/static?file=doge.gif" alt="doge" title="doge..." />
+    <img src="/static?file=doge1.jpg" alt="doge" title="doge..." />
+    <img src="/static?file=doge2.gif" alt="doge" title="doge..." />
+    <br>
+    <a href="/register">Register</a>
+    <a href="/login">Login</a>
+    <a href="/setting">Setting</a>
+    <a href="/todo">Todo</a>
+    <br>
+    <h3>Weibo</h3>
+    {% for u in users %}
+        <a href="/weibo?user_id={{u.id}}">{{u.username}}</a>
+        <br>
+    {% endfor %}
+</body>
+</html>

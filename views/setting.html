@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Setting</title>
+</head>
+<body>
+    {% if result %}
+        <h3>{{result}}</h3>
+    {% endif %}
+    <form action="/password/update" method="POST">
+        <input type="hidden" name="username" value="{{user.username}}">
+        <input type="text" name="password" placeholder="Old Password">
+        <br>
+        <input type="text" name="new_password" placeholder="New Password">
+        <br>
+        <button type="submit">Submit</button>
+    </form>
+</body>
+</html>

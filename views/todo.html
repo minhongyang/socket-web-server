@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Todo</title>
+</head>
+<body>
+    <h1>Todo list of {{user}}</h1>
+    <form action="/todo/add" method="POST">
+        <input type="text" name="todo_task" placeholder="Enter your todo" />
+        <button type="submit">Submit</button>
+    </form>
+    {% for todo in todo_list %}
+        <div>
+            <span>id: {{todo.id}} task: {{todo.task}}</span>
+            <span>created_time: {{todo.formatted_created_time()}}</span>
+            <span>updated_time: {{todo.formatted_updated_time()}}</span>
+            <a href="/todo/edit?id={{todo.id}}">编辑</a>
+            <a href="/todo/delete?id={{todo.id}}">删除</a>
+        </div>
+    {% endfor %}
+</body>
+</html>

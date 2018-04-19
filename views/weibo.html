@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Weibo</title>
+    <style>
+        .comment {
+            border: 1px red solid;
+        }
+    </style>
+</head>
+<body>
+    <form action="/weibo/add" method="POST">
+        <input type="hidden" name="user_id" value="{{user_id}}" />
+        <input type="text" name="content" />
+        <button type="submit">Submit weibo</button>
+    </form>
+    {% for w in weibos %}
+        <div>
+            id={{w.id}} {{w.content}}
+            <a href="/weibo/edit?id={{w.id}}">Edit</a>
+            <a href="/weibo/delete?id={{w.id}}">Delete</a>
+            <h3>Comments:</h3>
+            {% for c in w.comments() %}
+                <div class="comment">
+                    {{c.content}} by {{c.username}}
+                </div>
+            {% endfor %}
+            <form action="/weibo/comment?id={{w.id}}" method="POST">
+                <input type="text" name="content" />
+                <button type="submit">Submit comment</button>
+            </form>
+            <br>
+        </div>
+    {% endfor %}
+</body>
+</html>

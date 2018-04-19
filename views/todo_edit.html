@@ -1,0 +1,13 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Todo edit</title>
+</head>
+<body>
+    <form action="/todo/update?id={{todo.id}}" method="POST">
+        <input type="text" name="task" placeholder="{{todo.task}}"/>
+        <button type="submit">Submit</button>
+    </form>
+</body>
+</html>
